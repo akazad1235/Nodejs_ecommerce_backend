@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import errorHandler from './middlewares/errorHandler';
+import routeNotFound from './middlewares/routeNotFound';
 
 import cors from 'cors';
 import router from "./app/router";
@@ -19,5 +20,6 @@ app.get('/', (req: Request, res: Response) => {
     console.log(a)
 
 });
+app.use(routeNotFound);
 app.use(errorHandler);
 export default app;

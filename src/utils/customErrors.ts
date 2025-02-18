@@ -1,6 +1,7 @@
 // Base class for custom errors
 class CustomError extends Error {
     statusCode: number;
+    path?: string; 
 
     constructor(message: string, statusCode: number) {
         super(message);
