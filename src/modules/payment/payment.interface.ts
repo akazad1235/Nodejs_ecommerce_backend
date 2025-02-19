@@ -1,19 +1,21 @@
-import { Double } from "mongoose";
+interface AddonSoftware {
+  name: string;
+  price: number;
+}
 
-// Define user interface
 export interface IBfinitPayment extends Document {
-    order_id: string;
-    name: string;
-    email: string;
-    address?: string;
-    country: string;
-    software: string;
-    payment_type: string;
-    price: number; // Using number instead of Double for Mongoose
-    addone_software: string[]; // Array of strings
-    status: boolean;
-    createdAt: Date;
-    updatedAt: Date;
-    isVerified: boolean;
-    isDeleted: boolean;
-  }
+  order_id: string;
+  name: string;
+  email: string;
+  address?: string;
+  country: string;
+  software: string;
+  payment_type: string;
+  price: number; // Using number instead of Double for Mongoose
+  addone_software: AddonSoftware[]; // Updated to array of objects
+  status: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+  isVerified: boolean;
+  isDeleted: boolean;
+}

@@ -12,8 +12,12 @@ const BfinitPaymentSchema: Schema<IBfinitPayment> = new Schema(
       software: { type: String, required: true },
       payment_type: { type: String, required: true },
       price: { type: Number, required: true }, // Mongoose uses 'Number'
-      addone_software: { type: [String], required: true }, // Array of strings
-      status: { type: Boolean, required: true },
+      addone_software: [
+        {
+          name: { type: String, required: true },
+          price: { type: Number, required: true }
+        }
+      ],      status: { type: Boolean, required: true },
       createdAt: { type: Date, default: Date.now },
       updatedAt: { type: Date, default: Date.now },
       isVerified: { type: Boolean, required: true, default: false },
