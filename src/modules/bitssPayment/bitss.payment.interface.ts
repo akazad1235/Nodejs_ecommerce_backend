@@ -1,20 +1,16 @@
-interface AddonSoftware {
-  name: string;
-  price: number;
-}
 
-export interface IBfinitPayment extends Document {
+export interface IBitssPayment extends Document {
   order_id: string;
   name: string;
+  user_name: string;
   email: string;
   address?: string;
   country: string;
   software: string;
   payment_type: string;
   price: number; // Using number instead of Double for Mongoose
-  paid_amount: number;
-  addone_software: AddonSoftware[]; // Updated to array of objects
   status: boolean;
+  password?: string;
   createdAt: Date;
   updatedAt: Date;
   isVerified: boolean;
