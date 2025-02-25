@@ -13,7 +13,7 @@ import https from 'https';
 
 
 const getAllPaymentIntoDB = async() => {
-    return  await BitssPayment.find();
+    return  await BitssPayment.find().sort({ createdAt: -1 });
     
 }
 const createBitssPaymentIntoDB = async(payload: IBitssPayment) => {

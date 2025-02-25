@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const customErrors_1 = __importDefault(require("../../utils/customErrors"));
 const payment_model_1 = __importDefault(require("./payment.model"));
 const getAllPaymentIntoDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    return yield payment_model_1.default.find();
+    return yield payment_model_1.default.find().sort({ createdAt: -1 });
 });
 const createBfinitPaymentIntoDB = (payload) => __awaiter(void 0, void 0, void 0, function* () {
     const newUser = new payment_model_1.default(payload);

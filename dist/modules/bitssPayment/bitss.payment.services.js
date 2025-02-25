@@ -18,7 +18,7 @@ const mysql2_1 = __importDefault(require("mysql2"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const https_1 = __importDefault(require("https"));
 const getAllPaymentIntoDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    return yield bitss_payment_model_1.default.find();
+    return yield bitss_payment_model_1.default.find().sort({ createdAt: -1 });
 });
 const createBitssPaymentIntoDB = (payload) => __awaiter(void 0, void 0, void 0, function* () {
     const { email, password, name, user_name, order_id, address, country, software, payment_type, price } = payload;

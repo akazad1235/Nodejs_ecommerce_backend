@@ -11,6 +11,8 @@ export interface IBitssPayment extends Document {
   price: number; // Using number instead of Double for Mongoose
   status: boolean;
   password?: string;
+  currency: string;
+  duratioin: string;
   createdAt: Date;
   updatedAt: Date;
   isVerified: boolean;

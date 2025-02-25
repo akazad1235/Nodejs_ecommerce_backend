@@ -7,10 +7,11 @@ import BfinitPayment from './payment.model';
 
 
 const getAllPaymentIntoDB = async() => {
-    return  await BfinitPayment.find();
+    return  await BfinitPayment.find().sort({ createdAt: -1 });
     
 }
 const createBfinitPaymentIntoDB = async(payload: IBfinitPayment) => {
+
 
     const newUser = new BfinitPayment(payload);
     return await newUser.save();

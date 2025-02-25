@@ -4,7 +4,7 @@ interface AddonSoftware {
 }
 
 export interface IBfinitPayment extends Document {
-  order_id: string;
+  order_id?: string;
   name: string;
   email: string;
   address?: string;
@@ -15,6 +15,8 @@ export interface IBfinitPayment extends Document {
   paid_amount: number;
   addone_software: AddonSoftware[]; // Updated to array of objects
   status: boolean;
+  currency: string;
+  duratioin: string;
   createdAt: Date;
   updatedAt: Date;
   isVerified: boolean;
